@@ -20,4 +20,9 @@ public class SpringHibernateController {
         return new ResponseEntity<>(springHibernateRepository.getPersonsByCity(city), HttpStatus.OK);
     }
 
+    @GetMapping("/products/fetch-product")
+    public ResponseEntity<?> getProductName(@RequestParam String name) {
+        return new ResponseEntity<>(springHibernateRepository.getProductName(name), HttpStatus.OK);
+    }
+
 }

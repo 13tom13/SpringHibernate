@@ -1,4 +1,4 @@
-package com.netology.springhibernate.model;
+package com.netology.springhibernate.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
