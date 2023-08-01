@@ -1,9 +1,6 @@
 package com.netology.springhibernate.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,11 +11,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Entity
+@IdClass(PersonIDClass.class)
 @Table(name = "Persons", schema = "netology")
 public class Person {
 
     @Id
-    @Column(nullable = false)
     private String name;
 
     @Id
@@ -26,7 +23,6 @@ public class Person {
     private String surname;
 
     @Id
-    @Column(nullable = false)
     private int age;
 
     @Column(name = "phone_number", nullable = false)

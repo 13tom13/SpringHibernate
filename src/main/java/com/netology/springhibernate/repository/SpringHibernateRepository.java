@@ -13,7 +13,6 @@ public class SpringHibernateRepository {
     @PersistenceContext
     private EntityManager entityManager;
 
-
     public List getPersonsByCity(String city) {
         Query query = entityManager
                 .createQuery(
