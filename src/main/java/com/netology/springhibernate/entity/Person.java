@@ -19,7 +19,6 @@ public class Person {
     private String name;
 
     @Id
-    @Column(nullable = false)
     private String surname;
 
     @Id
