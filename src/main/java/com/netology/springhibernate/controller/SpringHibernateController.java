@@ -1,4 +1,4 @@
-package com.netology.springhibernate.Controller;
+package com.netology.springhibernate.controller;
 
 import com.netology.springhibernate.repository.SpringHibernateRepository;
 import lombok.RequiredArgsConstructor;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class SpringHibernateController {
 
-    final SpringHibernateRepository springHibernateRepository;
+    private final SpringHibernateRepository springHibernateRepository;
 
     @GetMapping("/persons/by-city")
     public ResponseEntity<?> getPersonsByCity(@RequestParam String city) {

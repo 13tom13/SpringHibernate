@@ -29,10 +29,10 @@ public class Person {
     @Column(nullable = false)
     private int age;
 
-    @Column
-    private String phone_number;
+    @Column(name = "phone_number", nullable = false)
+    private String phoneNumber;
 
-    @Column(nullable = false)
-    private String city_of_living;
+    @Column(name = "city_of_living", nullable = false)
+    private String cityOfLiving;
 
 }

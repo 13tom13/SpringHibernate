@@ -26,8 +26,8 @@ public class Orders {
     private Customer customer;
 
 
-    @Column(nullable = false)
-    private String product_name;
+    @Column(name = "product_name", nullable = false)
+    private String productName;
 
     @Column(nullable = false)
     private int amount;
