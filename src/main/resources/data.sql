@@ -1,3 +1,4 @@
+# example customer
 insert into netology.customer(name, surname, age, phone_number)
     value ('Ivan', 'Ivanov', 28, 79039551083);
 
@@ -13,6 +14,8 @@ insert into netology.customer(name, surname, age, phone_number)
 insert into netology.customer(name, surname, age, phone_number)
     value ('Irina', 'Li', 32, 79039559512);
 
+
+# example orders
 insert into netology.orders(data, customer_id, product_name, amount)
     value ('2023-07-22', 1, 'Kolbasa', 255);
 
@@ -27,3 +30,7 @@ insert into netology.orders(data, customer_id, product_name, amount)
 
 insert into netology.orders(data, customer_id, product_name, amount)
     value ('2023-07-20', 5, 'bread, jem', 300);
+
+# example person
+insert into netology.persons(name, surname, age, phone_number, city_of_living)
+    value ('Ivan', 'Ivanov', 23, '+79939065768', 'Moscow');

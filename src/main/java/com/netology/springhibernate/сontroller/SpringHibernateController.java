@@ -1,4 +1,4 @@
-package com.netology.springhibernate.Controller;
+package com.netology.springhibernate.сontroller;
 
 import com.netology.springhibernate.repository.SpringHibernateRepository;
 import lombok.RequiredArgsConstructor;

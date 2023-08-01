@@ -29,8 +29,8 @@ public class Customer {
         @Column(nullable = false)
         private int age;
 
-        @Column(nullable = false)
-        private String phone_number;
+        @Column(name = "phone_number", nullable = false)
+        private String phoneNumber;
 
         @OneToMany(mappedBy="customer")
         private List<Orders> orders;
