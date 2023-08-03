@@ -1,7 +1,6 @@
 package com.netology.springhibernate.repository;
 
 import com.netology.springhibernate.entity.Customer;
-import com.netology.springhibernate.entity.Person;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
@@ -17,8 +16,8 @@ public class SpringHibernateRepository {
 
     public List getPersonsByCity(String city) {
         Query query = entityManager.createQuery
-                ("select person from Person person  " +
-                        "where person.cityOfLiving = :city", Person.class);
+                ("select p.name, p.surname, p.age, p.phoneNumber, p.cityOfLiving.name from Person p where  " +
+                        "p.cityOfLiving.name = :city");
         query.setParameter("city", city);
         return query.getResultList();
     }

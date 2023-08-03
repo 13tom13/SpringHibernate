@@ -27,7 +27,8 @@ public class Person {
     @Column(name = "phone_number", nullable = false)
     private String phoneNumber;
 
-    @Column(name = "city_of_living", nullable = false)
-    private String cityOfLiving;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "city_Of_Living", nullable = false)
+    private City cityOfLiving;
 
 }

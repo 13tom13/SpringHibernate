@@ -1,5 +1,6 @@
 package com.netology.springhibernate.controller;
 
+import com.netology.springhibernate.repository.SpringHibernateJpaRepository;
 import com.netology.springhibernate.repository.SpringHibernateRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -15,6 +16,7 @@ public class SpringHibernateController {
 
     private final SpringHibernateRepository springHibernateRepository;
 
+    private final SpringHibernateJpaRepository springHibernateJpaRepository;
     @GetMapping("/persons/by-city")
     public ResponseEntity<?> getPersonsByCity(@RequestParam String city) {
         return new ResponseEntity<>(springHibernateRepository.getPersonsByCity(city), HttpStatus.OK);
@@ -23,6 +25,21 @@ public class SpringHibernateController {
     @GetMapping("/products/fetch-product")
     public ResponseEntity<?> getProductName(@RequestParam String name) {
         return new ResponseEntity<>(springHibernateRepository.getProductName(name), HttpStatus.OK);
+    }
+
+    @GetMapping("/persons/by-city-jpa")
+    public ResponseEntity<?> getPersonsByCityJpa(@RequestParam String city) {
+        return new ResponseEntity<>(springHibernateJpaRepository.findByCityOfLiving_Name(city), HttpStatus.OK);
+    }
+
+    @GetMapping("/persons/by-age")
+    public ResponseEntity<?> getPersonsByAge(@RequestParam int age) {
+        return new ResponseEntity<>(springHibernateJpaRepository.findByAgeIsLessThanOrderByAgeAsc(age), HttpStatus.OK);
+    }
+
+    @GetMapping("/persons/by-name-and-surname")
+    public ResponseEntity<?> getPersonsByNameAndSurname(@RequestParam String name, String surname) {
+        return new ResponseEntity<>(springHibernateJpaRepository.findByNameAndSurname(name, surname), HttpStatus.OK);
     }
 
 }
