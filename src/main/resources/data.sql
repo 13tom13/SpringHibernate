@@ -33,4 +33,4 @@ insert into netology.orders(data, customer_id, product_name, amount)
 
 # example person
 insert into netology.persons(name, surname, age, phone_number, city_of_living)
-    value ('Ivan', 'Ivanov', 23, '+79939065768', 'Moscow');
+    value ('Ivan', 'Ivanov', 23, '+79939065768', 1);

@@ -17,6 +17,12 @@ public class SpringHibernateController {
     private final SpringHibernateRepository springHibernateRepository;
 
     private final SpringHibernateJpaRepository springHibernateJpaRepository;
+
+    @GetMapping("/test")
+    public ResponseEntity<?> withoutLoginRequest() {
+        return new ResponseEntity<>("Access without authentication", HttpStatus.OK);
+    }
+
     @GetMapping("/persons/by-city")
     public ResponseEntity<?> getPersonsByCity(@RequestParam String city) {
         return new ResponseEntity<>(springHibernateRepository.getPersonsByCity(city), HttpStatus.OK);
