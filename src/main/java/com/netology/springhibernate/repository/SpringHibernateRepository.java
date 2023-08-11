@@ -1,7 +1,6 @@
 package com.netology.springhibernate.repository;
 
 import com.netology.springhibernate.entity.Customer;
-import com.netology.springhibernate.entity.Person;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
@@ -10,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class SpringHibernateRepository extends {
+public class SpringHibernateRepository {
     @PersistenceContext
     private EntityManager entityManager;
 
@@ -32,20 +31,6 @@ public class SpringHibernateRepository extends {
         query.setParameter("name", name);
         return query.getResultList();
 
-    }
-
-    public List addPerson(String name, String surname, int age, String city) {
-        if (entityManager.contains())
-            entityManager.
-
-                    Person personForAdd = Person.builder()
-                    .name(name)
-                    .surname(surname)
-                    .age(age)
-                    .build();
-
-
-        return null;
     }
 
 

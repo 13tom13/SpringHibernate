@@ -32,15 +32,20 @@ public class SecurityConfig {
     public InMemoryUserDetailsManager users(PasswordEncoder passwordEncoder) {
         UserDetails user = User.withUsername("user")
                 .password(passwordEncoder.encode("password"))
-                .roles("USER")
+                .roles("READ")
+                .build();
+
+        UserDetails writer = User.withUsername("writer")
+                .password(passwordEncoder.encode("writer"))
+                .roles("WRITE")
                 .build();
 
         UserDetails admin = User.withUsername("admin")
                 .password(passwordEncoder.encode("admin"))
-                .roles("USER", "ADMIN")
+                .roles("READ", "WRITE", "DELETE")
                 .build();
 
-        return new InMemoryUserDetailsManager(user, admin);
+        return new InMemoryUserDetailsManager(user, admin, writer);
     }
 
     @Bean
